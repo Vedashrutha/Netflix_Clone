@@ -1,0 +1,175 @@
+.nav-item a {
+  font-size: 18px;
+  font-weight: 400;
+  color: #ffffff;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  padding: 10px 0 10px 30px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Raleway", sans-serif !important;
+}
+
+.navbar > .container-fluid > .navbar-brand span {
+  font-size: 24px;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+.navbar-brand img {
+  max-height: 70px;
+  width: 100px;
+}
+
+.navbar-toggler {
+  font-size: 26px;
+  box-shadow: none !important;
+  color: #ffffff;
+  border-color: transparent;
+  background: transparent;
+  border-radius: 4px;
+}
+
+.navbar-toggler:focus {
+  border-color: transparent;
+}
+
+.nav-item > .btn-primary {
+  //font-family: "Raleway", sans-serif !important;
+  font-size: 18px;
+  border-radius: 4px;
+  margin-left: 30px;
+  padding: 8px 16px;
+  color: #fff;
+  border: 2px solid #ffffff;
+  background: #ffffff;
+  transition: 0.3s ease-in-out;
+}
+
+.navbar a:hover,
+.navbar .active,
+.navbar .active:focus,
+.navbar li:hover > a {
+  color: #ffffff;
+}
+
+.navbar .dropdown ul li {
+  list-style-type: none;
+  min-width: 200px;
+}
+
+.navbar .dropdown ul a {
+  color: #fff;
+  font-size: 17px;
+  padding: 10px 20px;
+  text-transform: none;
+}
+
+.navbar .dropdown ul a:hover,
+.navbar .dropdown ul .active:hover,
+.navbar .dropdown ul li:hover > a {
+  color: #ffffff;
+}
+
+.navbar .dropdown:hover > ul {
+  opacity: 1;
+  top: 100%;
+  visibility: visible;
+}
+
+.navbar .dropdown .dropdown ul {
+  top: 0;
+  right: calc(100% - 100px);
+  visibility: hidden;
+}
+
+.navbar .dropdown ul {
+  display: block;
+  position: absolute;
+  left: 14px;
+  top: calc(100% + 30px);
+  margin: 0;
+  padding: 10px 0;
+  z-index: 1100;
+  opacity: 0;
+  visibility: hidden;
+  background-color: #000000e0;
+  box-shadow: 0px 0px 30px rgba(255, 0, 0, 0.459);
+  transition: 0.3s;
+  border-radius: 4px;
+}
+
+hr {
+  border: none;
+  height: 1px;
+  width: 100%;
+  background-color: rgb(255, 0, 0);
+}
+
+.search_image {
+  width: 70px;
+  height: 40px;
+}
+.search__button {
+  color: #fff;
+  background: transparent;
+  border: none;
+}
+
+.icons {
+  font-size: 20px;
+}
+
+.navbar-toggler:focus,
+.navbar-toggler:active,
+.navbar-toggler-icon:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+#avatar {
+  max-height: 30px;
+  max-width: 30px;
+}
+
+#avatar1 {
+  max-height: 40px;
+  max-width: 40px;
+}
+
+.search_form{
+    height: 10px;
+}
+.search_form .mat-label{
+    color:#fff;
+}
+
+.search_form input{
+    font-size: 18px;
+    color:#fff;
+    padding: 6px;
+}
+
+.search_form mat-icon{
+    color:#fff;
+}
+
+.search_form mat-form-field{
+  width: 15rem;
+}
+
+ img{
+  height: 35px; 
+  width: 55px;
+}
+
+.modal {
+  z-index: 9999; /* Update the desired z-index value */
+}

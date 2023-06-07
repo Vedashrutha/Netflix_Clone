@@ -1,0 +1,89 @@
+<section id="hero" class="d-flex align-items-center justify-content-center">
+    <div class="container">
+        <br>
+        <br>
+        <div class="row justify-content-center">
+            <div class="col-xl-6 col-lg-8">
+                <h1>Edit Profile</h1>
+                <hr>
+                <!-- <h2>We are team of talented digital marketers</h2> -->
+            </div>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-xl-6 col-lg-8 header__section" data-toggle="modal" data-target="#exampleModal">
+                <img [src]=editProfile.avatar>
+                <i class="bi bi-pen pen"></i>
+            </div>
+
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h3 class="modal-title" id="exampleModalLabel">Select an Avatar</h3>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <div class="row" >
+                        <div class="col-sm-4" *ngFor="let img of images"> 
+                            <img class="display__images" [src]="img.source" (click)="setProfileImage(img.source)" data-dismiss="modal">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="modal-footer">
+                      <button  mat-raised-button class="btn"  class="btn btn-secondary" data-dismiss="modal" color="warn">Close</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-xl-6 col-lg-8">
+                <form [formGroup]="editForm" (ngSubmit)="onSubmit()">
+                    <!-- <input type="text" id="profileName" formControlName="profileName"
+                        [ngClass]="{ 'is-invalid': submitted && f['profileName'].errors}"
+                        class="form-control form-control-lg" name="inputMail" [value]=editProfile.profileName>
+                    <div *ngIf="submitted && f['profileName'].errors" class="invalid-feedback">
+                        <div *ngIf="f['profileName'].errors['required']">Profile Name is Required</div>
+                    </div> -->
+                    <label for="number" class="h2">Profile Name</label>
+                    <input type="text" id="profileName" formControlName="profileName" placeholder="Enter Profile Name" [value]=editProfile.profileName>
+                    <div *ngIf="editForm.controls['profileName'].errors?.['required']" class="error-message">
+                        profile name is required
+                    </div>
+
+                    <hr>
+
+                    <h2>Maturity Settings:</h2>
+                    <input type="text" class="small_box" value="All Maturity Settings" disabled>
+                    <p>Show Titles of all maturity ratings for this profile.</p>
+                    <button class="link_btn">Edit</button>
+                    <hr>
+
+                    <h2>Autoplay Controls</h2>
+                    <div class="checkbox-wrapper">
+                        <input type="checkbox"> Autoplay next episode in a series on all devices.
+                    </div>
+                    <div class="checkbox-wrapper">
+                        <input type="checkbox"> Autoplay next Movie on all devices.
+                    </div>
+                    <hr>
+                    <button mat-raised-button class="btn">Save</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="row justify-content-end">
+            <div class="col-xl-6 col-lg-8">
+                <br>
+                <button mat-raised-button class="btn" [routerLink]="['/manage']">Cancel</button>
+                <button mat-raised-button class="btn" color="warn"
+                    (click)="deleteProfile(editProfile._id)">DeleteProfile</button>
+            </div>
+        </div>
+        <br>
+    </div>
+</section>

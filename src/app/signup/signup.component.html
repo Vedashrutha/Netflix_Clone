@@ -1,0 +1,165 @@
+<!-- <ngx-spinner  bdColor = "rgba(0, 0, 0, 0.8)" size = "medium" color = "#ff0000" type = "timer" [fullScreen] = "false"></ngx-spinner> -->
+<nav class="navbar navbar-light bg-light">
+  <a class="navbar-brand" [routerLink]="['/home1']">
+    <img src="../../assets/img/logo.svg" alt="logo">
+  </a>
+</nav>
+<br>
+<br>
+<div class="container-fluid">
+  <div class="container form">
+    <h2>Sign up</h2>
+    <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+
+      <div class="row">
+
+        <div class="col-md-4">
+          <div class="form-group">
+            <label for="fname">First Name</label>
+            <input type="text" id="fname" formControlName="fname" placeholder="Enter your name">
+            <div *ngIf="signupForm.controls['fname'].errors?.['required']" class="error-message">
+              First Name is required
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="lname">Last Name</label>
+            <input type="text" id="lname" formControlName="lname" placeholder="Enter your last name">
+            <div *ngIf="signupForm.controls['lname'].errors?.['required']" class="error-message">
+              Last Name is required
+            </div>
+          </div>
+        </div>
+        
+
+        <div class="col-md-4">
+
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="text" id="email" formControlName="email" placeholder="">
+            <!-- <div *ngIf="signupForm.controls['email'].errors?.['required']" class="error-message">
+              Email Address is required.
+            </div>
+            <div *ngIf="signupForm.controls['email'].errors?.['invalidEmail']" class="error-message">
+              Please enter a valid email address.
+            </div> -->
+          </div>
+
+          <div class="form-group">
+            <label for="number">Phone Number</label>
+            <input type="number" id="number" formControlName="number" placeholder="Enter your Phone number">
+            <div *ngIf="signupForm.controls['number'].errors?.['required']" class="error-message">
+              Invalid Phone Number (10 digits required)
+            </div>
+          </div>
+
+        </div>
+
+        <div class="col-md-4">
+
+          <div class="form-group">
+            <label for="password">Password </label>
+            <input type="password" id="password" formControlName="password">
+            <div *ngIf="signupForm.controls['password'].errors?.['required']" class="error-message">
+              Password is required.
+            </div>
+            <div *ngIf="signupForm.controls['password'].errors?.['invalidPassword']" class="error-message">
+              *Password must be minimum 8 characters long and must include one special character,one uppercase letter
+              and one number
+            </div>
+          </div>
+
+          <!-- <div class="form-group">
+            <label for="confirmpassword">Confirm Password :</label>
+            <input type="password" id="confirmpassword" formControlName="confirmpassword">
+            <div *ngIf="signupForm.errors?.['passwordMismatch']" class="error-message">
+              Passwords do not match
+            </div>
+          </div> -->
+          <div class="form-group">
+            <label for="netflixPlan">Netflix Plan</label>
+            <select id="netflixPlan" formControlName="netflixPlan" (change)="onChangeType($event)" class="custom-select form-select"> 
+              <option value="">Select a plan</option>
+              <option *ngFor="let plan of plans">{{plan.name}}</option>
+            </select>
+            <div
+              *ngIf="signupForm.controls['netflixPlan'].invalid && (signupForm.controls['netflixPlan'].dirty || signupForm.controls['netflixPlan'].touched)"
+              class="error-message">
+              Select a Plan
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="form-group">
+            <label for="price">Price</label>
+            <input type="text" id="price" formControlName="price" placeholder="">
+            <!-- <div *ngIf="signupForm.controls['price'].invalid && (signupForm.controls['price'].dirty || signupForm.controls['price'].touched)"
+              class="error-message">
+              Password is required
+            </div> -->
+          </div>
+          </div>
+
+          <div class="col-md-4">
+          <div class="form-group">
+            <label for="cardNumber">Card Number</label>
+            <input type="text" id="cardNumber" formControlName="cardNumber" placeholder="Enter your card number"
+              [(ngModel)]="cardNumberEntered" (input)="onCardNumberInput()" />
+            <div *ngIf="signupForm.controls['cardNumber'].errors?.['required']" class="error-message">
+              Card number is required
+            </div>
+            <div *ngIf="signupForm.controls['cardNumber'].errors?.['invalidCardNumber']" class="error-message">
+             Card number is invalid
+            </div>
+            <div *ngIf="cardName" class="card-name">
+              Card Type : {{ cardName | titlecase}}
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+          <div class="form-group">
+            <button type="submit" [disabled]="signupForm.invalid">continue to payment</button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <br>
+  <div class="container plans">
+    <div class="row">
+      <div class="col-md-4" *ngFor="let plan of plans">
+        <div class="plan-card">
+          <h3>{{plan.name}}</h3>
+          <h4>{{plan.price}}/- monthly</h4>
+          <ul>
+            <li>{{plan.description}}</li>
+            <li>Watch on 4 devices at a time</li>
+            <li>Cancel anytime</li>
+          </ul>
+          <!-- <button>Select Plan</button> -->
+        </div>
+      </div>
+
+      <!-- <div class="col-md-4">
+        <div class="plan-card">
+          <h3>Premium</h3>
+          <h4>799/- monthly</h4>
+          <ul>
+            <li></li>
+            <li>Watch on 4 devices at a time</li>
+            <li>Cancel anytime</li>
+          </ul>
+          <button>Select Plan</button>
+        </div>
+      </div> -->
+
+    </div>
+  </div>
+</div>

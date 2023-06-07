@@ -1,0 +1,11 @@
+demo: external package usage
+
+Steps:
+1)create a folder moduleexample
+2)create a main.go inside
+3)create a folder util
+4)create util.go inside folder util
+5)cd ..
+6)go mod init moduleexample //inside moduleexample folder
+7)import "moduleexample/util" in main.go
+8)call method from util package

@@ -1,0 +1,39 @@
+<section id="hero" class="d-flex align-items-center justify-content-center">
+  <div class="container" data-aos="fade-up">
+
+    <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="250">
+      <div class="col-xl-6 col-lg-8">
+        <h1>Manage Profiles<span>:)</span></h1>
+      </div>
+    </div>
+
+    <div class="row gy-4 mt-5 justify-content-center" data-aos="zoom-in" data-aos-delay="450">
+      <div class="col-xl-2 col-md-4" *ngFor="let profile of userData.profile">
+        <a (click)="selectProfile(profile._id)">
+          <div class="icon-box">
+            <img [src]=profile.avatar>
+            <h3>{{profile.profileName}}</h3>
+            <i class="bi bi-pen pen"></i>
+          </div>
+        </a>
+      </div>
+
+      <div class="col-xl-2 col-md-4">
+        <a [routerLink]="['/newprofile']">
+          <div class="icon-box">
+            <br>
+            <i class="bi bi-plus-circle plus"></i>
+            <h3 style="color:#fff; padding-top: 50px;">Add Profile</h3>
+          </div>
+        </a>
+      </div>
+    </div>
+    <br>
+    <div class="row justify-content-center" data-aos="zoom-in" data-aos-delay="450">
+      <div class="col-md-3 sm-3">
+        <button mat-raised-button class="link_btn" [routerLink]="['/home2']">Done</button>
+      </div>
+    </div>
+
+  </div>
+</section>

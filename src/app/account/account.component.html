@@ -1,0 +1,195 @@
+<nav class="navbar navbar-expand-lg fixed-top"
+    style="background-color: #000; box-shadow: 0px 1px 7px rgba(0, 0, 0, 0.315);">
+    <div class="container-fluid">
+        <a class="navbar-brand" [routerLink]="['/home2']">
+            <img src="../../assets/img/logo.svg" style="width:200px;height:60px;" class="img-fluid">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggler"
+            aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-list"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarToggler">
+            <ul class="navbar-nav ml-auto">
+                <li class="dropdown nav-item">
+                    <a class="nav-link">
+                        <img [src]=profileDetails.avatar id="avatar">&nbsp;
+                        {{profileDetails.profileName}}
+                        <i class="bi bi-caret-down-fill"></i>
+                    </a>
+                    <ul>
+                        <li class="nav-item" *ngFor="let p of user.profile">
+                            <a class="nav-link" (click)="selectProfile(p._id)">
+                                <img [src]=p.avatar id="avatar">&nbsp;
+                                {{p.profileName}}
+                            </a>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" [routerLink]="['/manage']"><i
+                                    class="bi bi-gear-wide-connected icons"></i> &nbsp;Manage Profile</a></li>
+                        <li class="nav-item"><a class="nav-link" [routerLink]="['/account']"><i
+                                    class="bi bi-person-lock icons"></i> &nbsp;Account</a></li>
+                        <li class="nav-item" style="text-align: center;">
+                            <hr style="background-color: #fff;">
+                            <a (click)="signOut()">Sign out &nbsp;<i class="bi bi-box-arrow-right icons"></i> </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<section id="hero">
+    <div class="container-fluid m-0">
+        <div class="container">
+            <div class="row">
+                <h1>Account</h1>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-md-4">
+                    <h3>
+                        Membership & Billing
+                    </h3>
+                    <button class="button" data-toggle="modal" data-target="#exampleModalCenter">Cancel
+                        Membership</button>
+                    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+                        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLongTitle">Delete Account</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    Are you sure you want to cancel membership and delete your account?
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-danger" (click)="deleteAccount()">Delete
+                                        Account</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 text-justify">
+                    <h4>{{user.eMail}}</h4>
+                    <p>Passsword: {{user.uPass | password}}</p>
+                    <p>Phone: {{user.phoneNumber}}</p>
+                    <hr>
+                    <h4>Payment Details</h4>
+                    <p>
+                        Card Number : {{ user.billingDetails.cardNumber | cardNumber }}
+                    </p>
+                    <p>
+                        Card Type : {{ user.billingDetails.cardNumber | cardtype }}
+                        <img [src]="cardImage" style="width: 70px; height: fit-content;">
+                    </p>
+                </div>
+                <div class="col-md-4 text-right">
+                    <p>
+                        <a (click)="openUpdateEmailDialog()">Change email</a>
+                    </p>
+                    <p>
+                        <a (click)="openChangePasswordDialog()">Change password</a>
+                    </p>
+                    <p>
+                        <a (click)="openChangePhoneNumberDialog()">Change phone number</a>
+                    </p>
+                    <p><a>Manage payment</a></p>
+                    <p><a data-toggle="modal" data-target="#billModal">Billing details</a></p>
+
+                    <div class="modal fade" id="billModal" tabindex="-1" role="dialog" aria-labelledby="billModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title" id="billModalLabel">Billing Details</h1>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="billing-details-modal">
+                                        <table class="details-table">
+                                            <tr>
+                                                <th>Name:</th>
+                                                <td>{{ user.firstName }}</td>
+                                            </tr>
+                                            <tr>
+                                                <th>Email:</th>
+                                                <td>{{ user.eMail }}</td>
+                                            </tr>
+                                            <tr>
+                                                <th>Card Number:</th>
+                                                <td>{{ user.billingDetails.cardNumber | cardNumber }}</td>
+                                            </tr>
+                                            <tr>
+                                                <th>Subscription Details :</th>
+                                                <td>{{ user.billingDetails.planName }}</td>
+                                            </tr>
+                                            <tr>
+                                                <th>Purchased On :</th>
+                                                <td>{{ user.billingDetails.purchasedOn | customdate }}</td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button mat-raised-button color="primary" (click)="generatePDF()">Download
+                                        Invoice</button> &nbsp;
+                                    <button mat-raised-button class="btn" class="btn btn-secondary" data-dismiss="modal"
+                                        color="warn">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-md-4">
+                    <h3>
+                        Plan Details
+                    </h3>
+                </div>
+                <div class="col-md-4 text-justify">
+                    <h4>{{user.billingDetails.planName}} <i class="bi bi-badge-hd"></i></h4>
+                </div>
+                <div class="col-md-4 text-right">
+                    <a>Change plan</a>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-md-4">
+                    <h3>
+                        Security & privacy
+                    </h3>
+                </div>
+                <div class="col-md-4 text-justify">
+                    <p>Control access to this account,view the most recently active device and more</p>
+                </div>
+                <div class="col-md-4 text-right">
+                    <p><a (click)="signOut()">Sign Out</a></p>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-md-4">
+                    <h3>
+                        Profile & Parental Controls
+                    </h3>
+                </div>
+                <div class="col-md-4 text-justify">
+                    <div *ngFor="let profile of profiles" class="profiles__section">
+                        <img [src]=profile.avatar class="img-fluid">
+                        <p>{{profile.profileName}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

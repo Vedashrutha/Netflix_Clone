@@ -1,0 +1,526 @@
+[{
+  "_id": 1,
+  "title": "AKA",
+  "type": "movie",
+  "cast": [
+    "Alban Lenoir",
+    "Éric Cantona",
+    "Thibault de Montalembert"
+  ],
+  "director_id": 1,
+  "year": 2022,
+  "genre": [
+    "french",
+    "crime",
+    "action",
+    "adventure"
+  ],
+  "language": [
+    "hindi",
+    "english",
+    "french"
+  ],
+  "description": "An undercover assignment to expose a drug ring becomes a timid Mumbai constable's road to empowerment as she realizes her dormant sexuality's potential.",
+  "runtime": "2hr 30min",
+  "rating": 7.1,
+  "thumbnail": "../../assets/thumbnails/movies/aka.jpg",
+  "image": "../../assets/posters/aka.jpg",
+  "trailerUrl": "../../assets/video/trailer/aka.mp4"
+},{
+  "_id": 2,
+  "title": "Extraction",
+  "type": "movie",
+  "cast": [
+    "Chris Hemsworth",
+    "Rudhraksh Jaiswal",
+    "Randeep Hooda"
+  ],
+  "director_id": 2,
+  "year": 2020,
+  "genre": [
+    "action",
+    "adventure"
+  ],
+  "language": [
+    "hindi",
+    "english"
+  ],
+  "description": "A hardened gun-for-hire's latest mission becomes a soul-searching race to survive when he's sent into Bangladesh to rescue a drug lord's kidnapped son.",
+  "runtime": "1hr 58min",
+  "rating": 8.4,
+  "thumbnail": "../../assets/thumbnails/movies/extraction.jpg",
+  "image": "../../assets/posters/extraction.jpg",
+  "trailerUrl": "../../assets/video/trailer/extraction.mp4"
+},{
+  "_id": 3,
+  "title": "Agneepath",
+  "type": "movie",
+  "cast": [
+    "Hrithik Roshan",
+    "Priyanka Chopra"
+  ],
+  "director_id": 3,
+  "year": 2016,
+  "genre": [
+    "crime",
+    "drama",
+    "action"
+  ],
+  "language": [
+    "hindi"
+  ],
+  "description": "Agneepath is a story of revenge of Vijay Chauhan against an evil and sadistic Kaancha, who hangs Vijay's father to death. Vijay grows up with a single aim of avenging his father's death. The story revolves around Vijay Chauhan, his relationships with his family and above all, his Revenge.",
+  "runtime": "2hr 54min",
+  "rating": 6.9,
+  "thumbnail": "../../assets/thumbnails/movies/agneepath.jpg",
+  "image": "../../assets/posters/agneepath.jpg",
+  "trailerUrl": "../../assets/video/trailer/agneepath.mp4"
+},{
+  "_id": 4,
+  "title": "Lucy",
+  "type": "movie",
+  "cast": [
+    "Scarlett Johansson",
+    "Morgan Freeman",
+    "Choi Min-sik"
+  ],
+  "director_id": 4,
+  "year": 2014,
+  "genre": [
+    "french",
+    "sci-fi",
+    "action",
+    "adventure"
+  ],
+  "language": [
+    "english",
+    "hindi"
+  ],
+  "description": "When a young American in Taiwan becomes an unwilling drug mule, the high-tech narcotics get released into her system and activate superhuman powers.",
+  "runtime": "1hr 29min",
+  "rating": 6.4,
+  "thumbnail": "../../assets/thumbnails/movies/lucy.jpg",
+  "image": "../../assets/posters/lucy.jpg",
+  "trailerUrl": "../../assets/video/trailer/lucy.mp4"
+},{
+  "_id": 5,
+  "type": "movie",
+  "title": "The Dark Knight",
+  "cast": [
+    "Christian Bale",
+    "Heath Ledger",
+    "Aaron Eckhart"
+  ],
+  "director_id": 5,
+  "year": 2008,
+  "genre": [
+    "us",
+    "action",
+    "adventure"
+  ],
+  "language": [
+    "english",
+    "hindi"
+  ],
+  "description": "Batman, Lieutenant Gordon and District Attorney Harvey Dent go up against the Joker, a criminal mastermind in ghoulish makeup terrorizing Gotham City.",
+  "runtime": "2hr 32min",
+  "rating": 9.1,
+  "thumbnail": "../../assets/thumbnails/movies/darkknight.jpg",
+  "image": "../../assets/posters/darkknight.jpg",
+  "trailerUrl": "../../assets/video/trailer/darkknight.mp4"
+},{
+  "_id": 6,
+  "type": "movie",
+  "title": "Death Note",
+  "cast": [
+    "Mamoru Miyano",
+    "Kappei Yamaguchi",
+    "Shido Nakamura"
+  ],
+  "director_id": 1,
+  "year": 2006,
+  "genre": [
+    "japanese",
+    "anime",
+    "thriller",
+    "romantic"
+  ],
+  "language": [
+    "english",
+    "japanese"
+  ],
+  "description": "When a Japanese high schooler comes into possession of a mystical notebook, he finds he has the power to kill anybody whose name he enters in it.",
+  "runtime": "1hr 47min",
+  "rating": 7.4,
+  "thumbnail": "../../assets/thumbnails/movies/deathnote.jpg",
+  "image": "../../assets/posters/deathnote.jpg",
+  "trailerUrl": "../../assets/video/trailer/deathnote.mp4"
+},{
+  "_id": 7,
+  "type": "movie",
+  "title": "Don 2",
+  "cast": [
+    "Shah Rukh Khan",
+    "Priyanka Chopra Jonas",
+    "Boman Irani"
+  ],
+  "director_id": 2,
+  "year": 2011,
+  "genre": [
+    "hindi",
+    "bollywood",
+    "crime",
+    "action",
+    "adventure"
+  ],
+  "language": [
+    "hindi"
+  ],
+  "description": "With Asia under his complete control, criminal mastermind Don turns to Europe, battling the mob bosses of each nation along the way.",
+  "runtime": "2hr 27min",
+  "rating": 7.6,
+  "thumbnail": "../../assets/thumbnails/movies/don2.jpg",
+  "image": "../../assets/posters/don2.jpg",
+  "trailerUrl": "../../assets/video/trailer/don2.mp4"
+},{
+  "_id": 8,
+  "type": "movie",
+  "title": "Drishyam",
+  "cast": [
+    "Ajay Devgn",
+    "Shriya Saran",
+    "Tabu"
+  ],
+  "director_id": 3,
+  "year": 2015,
+  "genre": [
+    "hindi",
+    "bollywood",
+    "thriller",
+    "drama",
+    "adventure"
+  ],
+  "language": [
+    "hindi",
+    "tamil",
+    "kannada",
+    "telugu",
+    "malayalam"
+  ],
+  "description": "An unexceptional man becomes a murder suspect when the son of a high-ranking police official who harassed his daughter goes missing.",
+  "runtime": "2hr 42min",
+  "rating": 8.2,
+  "thumbnail": "../../assets/thumbnails/movies/drishyam.jpg",
+  "image": "../../assets/posters/drishyam.jpg",
+  "trailerUrl": "../../assets/video/trailer/drishyam.mp4"
+},{
+  "_id": 9,
+  "type": "movie",
+  "title": "Kabir Singh",
+  "cast": [
+    "Shahid Kapoor",
+    "Kiara Advani",
+    "Suresh Oberoi"
+  ],
+  "director_id": 4,
+  "year": 2019,
+  "genre": [
+    "hindi",
+    "bollywood",
+    "thriller",
+    "drama",
+    "adventure",
+    "romantic"
+  ],
+  "language": [
+    "hindi",
+    "tamil",
+    "kannada"
+  ],
+  "description": "An exalted but short-fused surgeon plunges into a spiral of drugs, alcohol and rage after his intense relationship with his girlfriend turbulently ends.",
+  "runtime": "2hr 51min",
+  "rating": 8.2,
+  "thumbnail": "../../assets/thumbnails/movies/kabirsingh.jpg",
+  "image": "../../assets/posters/kabirsingh.jpg",
+  "trailerUrl": "../../assets/video/trailer/kabirsingh.mp4"
+},{
+  "_id": 10,
+  "type": "movie",
+  "title": "Andhadhun",
+  "cast": [
+    "Tabu",
+    "Ayushmann Khurrana",
+    "Radhika Apte"
+  ],
+  "director_id": 5,
+  "year": 2018,
+  "genre": [
+    "hindi",
+    "bollywood",
+    "crime",
+    "drama",
+    "comedy",
+    "romantic"
+  ],
+  "language": [
+    "hindi"
+  ],
+  "description": "A visually impaired pianist's world careens into a series of shocking twists after he unintentionally lands at the murder scene of a former film star.",
+  "runtime": "2hr 17min",
+  "rating": 6.9,
+  "thumbnail": "../../assets/thumbnails/movies/andhadhun.jpg",
+  "image": "../../assets/posters/andhadhun.jpg",
+  "trailerUrl": "../../assets/video/trailer/andhadhun.mp4"
+},{
+  "_id": 11,
+  "title": "Evil Dead",
+  "type": "movie",
+  "cast": [
+    "Jane Levy",
+    "Shiloh Fernandez",
+    "David",
+    "Jessica Lucas",
+    "Lou Taylor Pucci"
+  ],
+  "director_id": 1,
+  "year": 2013,
+  "genre": [
+    "horror",
+    "us"
+  ],
+  "language": [
+    "english"
+  ],
+  "description": "A group of friends discover an evil book and unwittingly release a swarm of bloodthirsty demons in this remake of Sam Raimi's classic horror flick.",
+  "runtime": "1hr 31min",
+  "rating": 6.8,
+  "thumbnail": "../../assets/thumbnails/movies/evildead.jpg",
+  "image": "../../assets/posters/evildead.jpg",
+  "trailerUrl": "../../assets/video/trailer/evildead.mp4"
+},{
+  "_id": 12,
+  "title": "Bhool Bhulaiyya",
+  "type": "movie",
+  "cast": [
+    "Tabu",
+    "Kartik Aaryan",
+    "Kiara Advani"
+  ],
+  "director_id": 2,
+  "year": 2022,
+  "genre": [
+    "horror",
+    "bollywood",
+    "comedy",
+    "romantic"
+  ],
+  "language": [
+    "hindi"
+  ],
+  "description": "When strangers Reet and Ruhan cross paths, their journey leads to an abandoned mansion and a dreaded spirit who has been trapped for 18 years.",
+  "runtime": "2hr 21min",
+  "rating": 5.8,
+  "thumbnail": "../../assets/thumbnails/movies/bhoolbhulaiyya.jpg",
+  "image": "../../assets/posters/bhoolbhulaiyya.jpg",
+  "trailerUrl": "../../assets/video/trailer/bhoolbhulaiyya.mp4"
+},{
+  "_id": 13,
+  "title": "Chennai Express",
+  "type": "movie",
+  "cast": [
+    "Shah Rukh Khan",
+    "Deepika Padukone",
+    "Nikitin Dheer"
+  ],
+  "director_id": 3,
+  "year": 2013,
+  "genre": [
+    "romantic",
+    "bollywood",
+    "comedy"
+  ],
+  "language": [
+    "hindi"
+  ],
+  "description": "What could have been a sad journey turns joyful for Rahul when he falls in love with a woman en route to submerging his grandfather's ashes.",
+  "runtime": "2hr 14min",
+  "rating": 7.8,
+  "thumbnail": "../../assets/thumbnails/movies/chennaiexpress.jpg",
+  "image": "../../assets/posters/chennaiexpress.jpg",
+  "trailerUrl": "../../assets/video/trailer/chennaiexpress.mp4"
+},{
+  "_id": 14,
+  "title": "Man of Steel",
+  "type": "movie",
+  "cast": [
+    "Henry Cavill",
+    "Amy Adams",
+    "Michael Shannon"
+  ],
+  "director_id": 4,
+  "year": 2013,
+  "genre": [
+    "action",
+    "adventure",
+    "sci-fi"
+  ],
+  "language": [
+    "english"
+  ],
+  "description": "Drifter Clark Kent must keep his powers hidden from the world, but when an evil general plans to destroy Earth, the Man of Steel springs into action.",
+  "runtime": "2hr 22min",
+  "rating": 7.3,
+  "thumbnail": "../../assets/thumbnails/movies/manofsteel.jpg",
+  "image": "../../assets/posters/manofsteel.jpg",
+  "trailerUrl": "../../assets/video/trailer/manofsteel.mp4"
+},{
+  "_id": 15,
+  "title": "300",
+  "type": "movie",
+  "cast": [
+    "Gerard Butler",
+    "Lena Headey",
+    "Dominic West"
+  ],
+  "director_id": 5,
+  "year": 2013,
+  "genre": [
+    "action",
+    "sci-fi"
+  ],
+  "language": [
+    "english"
+  ],
+  "description": "King Leonidas of Sparta leads 300 powerful warriors into an epic and bloody battle at Thermopylae against the massive invading forces of King Xerxes.",
+  "runtime": "1hr 56min",
+  "rating": 8.3,
+  "thumbnail": "../../assets/thumbnails/movies/300.jpg",
+  "image": "../../assets/posters/300.jpg",
+  "trailerUrl": "../../assets/video/trailer/300.mp4"
+},{
+  "_id": 16,
+  "title": "She",
+  "type": "tvshow",
+  "cast": [
+    "Vin-Diesel",
+    "Deepika Padukone",
+    "Jason Momoa"
+  ],
+  "director_id": 1,
+  "year": 2022,
+  "genre": [
+    "crime",
+    "thriller"
+  ],
+  "language": [
+    "hindi",
+    "english"
+  ],
+  "description": "An undercover assignment to expose a drug ring becomes a timid Mumbai constable's road to empowerment as she realizes her dormant sexuality's potential.",
+  "runtime": "2hr 01min",
+  "rating": 6.9,
+  "thumbnail": "../../assets/thumbnails/movies/she.jpg",
+  "image": "../../assets/posters/she.jpg",
+  "trailerUrl": "../../assets/video/trailer/she.mp4"
+},{
+  "_id": 17,
+  "title": "Breaking Bad",
+  "type": "tvshow",
+  "cast": [
+    "Bryan Cranston",
+    "Aaron Paul",
+    "Anna Gunn"
+  ],
+  "director_id": 2,
+  "year": 2008,
+  "genre": [
+    "crime",
+    "drama"
+  ],
+  "language": [
+    "hindi",
+    "english"
+  ],
+  "description": "A terminally ill chemistry teacher teams with a former student to manufacture crystal meth to secure his family's future",
+  "runtime": "3hr 23min",
+  "rating": 6.1,
+  "thumbnail": "../../assets/thumbnails/movies/breakingbad.jpg",
+  "image": "../../assets/posters/breakingbad.jpg",
+  "trailerUrl": "../../assets/video/trailer/breakingbad.mp4"
+},{
+  "_id": 18,
+  "title": "Arrow",
+  "type": "tvshow",
+  "cast": [
+    "Stephen",
+    "Amell",
+    "Katie Cassidy",
+    "David Ramsey"
+  ],
+  "director_id": 3,
+  "year": 2012,
+  "genre": [
+    "action",
+    "thriller",
+    "crime"
+  ],
+  "language": [
+    "hindi",
+    "english"
+  ],
+  "description": "Based on DC Comics' Green Arrow, an affluent playboy becomes a vengeful superhero, saving the city from villains armed with just a bow and arrows.",
+  "runtime": "",
+  "rating": 6.9,
+  "thumbnail": "../../assets/thumbnails/movies/arrow.jpg",
+  "image": "../../assets/posters/arrow.jpg",
+  "trailerUrl": "../../assets/video/trailer/arrow.mp4"
+},{
+  "_id": 19,
+  "title": "Suits",
+  "type": "tvshow",
+  "cast": [
+    "Gabriel Macht",
+    "Patrick J. Adams",
+    "Rick Hoffman"
+  ],
+  "director_id": 4,
+  "year": 2011,
+  "genre": [
+    "drama"
+  ],
+  "language": [
+    "english",
+    "kannada"
+  ],
+  "description": "When Michael impresses a big lawyer with his razor-sharp mind, a college dropout scores a coveted associate job, even though he has no legal credentials",
+  "runtime": "",
+  "rating": 4.5,
+  "thumbnail": "../../assets/thumbnails/movies/suits.jpg",
+  "image": "../../assets/posters/suits.jpg",
+  "trailerUrl": "../../assets/video/trailer/suits.mp4"
+},{
+  "_id": 20,
+  "title": "Narcos",
+  "type": "tvshow",
+  "cast": [
+    "Wagner Moura",
+    "Pedro Pascal",
+    "Boyd Holbrook"
+  ],
+  "director_id": 5,
+  "year": 2015,
+  "genre": [
+    "drama",
+    "crime"
+  ],
+  "language": [
+    "english",
+    "spanish"
+  ],
+  "description": "The true story of Colombia's infamously violent and powerful drug cartels fuels this gritty gangster drama series.",
+  "runtime": "",
+  "rating": 7.6,
+  "thumbnail": "../../assets/thumbnails/movies/narcos.jpg",
+  "image": "../../assets/posters/narcos.jpg",
+  "trailerUrl": "../../assets/video/trailer/narcos.mp4"
+}]

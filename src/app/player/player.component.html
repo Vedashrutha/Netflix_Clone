@@ -1,0 +1,132 @@
+<div class="video-container body" #videoContainer>
+    <video #videoPlayer id="video" (timeupdate)="updateProgressBar()" (ended)="onVideoEnded()"
+        src={{contentData.trailerUrl}} [muted]="isMuted" [controls]="false" (click)="togglePlay()"
+        (mousemove)="showVideoControls()" [class.hide-cursor]="hideControls">
+    </video>
+    <div class="controls-container" [hidden]="hideControls">
+        <div class="progress-controls">
+            <div class="progress-bar" >
+                <div class="watched-bar"></div>
+                <div class="playhead"></div>
+            </div>
+            <div class="time-remaining">
+              -  {{ remainingTime }}
+            </div>
+        </div>
+        <div class="controls">
+            <button class="play-pause" (click)="togglePlay()">
+                <svg class="playing" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" *ngIf="!isPlaying">
+                    <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                </svg>
+                <svg class="paused" viewBox="0 0 24 24" *ngIf="isPlaying">
+                    <rect x="6" y="4" width="4" height="16"></rect>
+                    <rect x="14" y="4" width="4" height="16"></rect>
+                </svg>
+            </button>
+            <button class="rewind" (click)="skipBackward()">
+                <svg viewBox="0 0 24 24">
+                    <path fill="#ffffff"
+                        d="M12.5,3C17.15,3 21.08,6.03 22.47,10.22L20.1,11C19.05,7.81 16.04,5.5 12.5,5.5C10.54,5.5 8.77,6.22 7.38,7.38L10,10H3V3L5.6,5.6C7.45,4 9.85,3 12.5,3M10,12V22H8V14H6V12H10M18,14V20C18,21.11 17.11,22 16,22H14A2,2 0 0,1 12,20V14A2,2 0 0,1 14,12H16C17.11,12 18,12.9 18,14M14,14V20H16V14H14Z" />
+                </svg>
+            </button>
+            <button class="fast-forward" (click)="skipForward()">
+                <svg viewBox="0 0 24 24">
+                    <path fill="#ffffff"
+                        d="M10,12V22H8V14H6V12H10M18,14V20C18,21.11 17.11,22 16,22H14A2,2 0 0,1 12,20V14A2,2 0 0,1 14,12H16C17.11,12 18,12.9 18,14M14,14V20H16V14H14M11.5,3C14.15,3 16.55,4 18.4,5.6L21,3V10H14L16.62,7.38C15.23,6.22 13.46,5.5 11.5,5.5C7.96,5.5 4.95,7.81 3.9,11L1.53,10.22C2.92,6.03 6.85,3 11.5,3Z" />
+                </svg>
+            </button>
+            <button class="volume" (click)="toggleMute()">
+                <svg class="full-volume" viewBox="0 0 24 24" *ngIf="!isMuted">
+                    <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                    <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+                </svg>
+                <svg class="muted" viewBox="0 0 24 24" *ngIf="isMuted">
+                    <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                    <line x1="23" y1="9" x2="17" y2="15"></line>
+                    <line x1="17" y1="9" x2="23" y2="15"></line>
+                </svg>
+            </button>
+            <!-- 
+                
+             -->
+             
+
+              <!-- 
+
+               -->
+            <p class="title">
+                <span class="series">{{contentData.title}}</span> <span class="episode"></span>
+            </p>
+            <button class="help">
+                <svg viewBox="0 0 24 24">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                    <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                </svg>
+            </button>
+            <button class="next">
+                <svg viewBox="0 0 24 24">
+                    <polygon points="5 4 15 12 5 20 5 4"></polygon>
+                    <line x1="19" y1="5" x2="19" y2="19"></line>
+                </svg>
+            </button>
+            <!-- <button class="episodes" [matMenuTriggerFor]="playbackSpeedMenu">
+          <svg viewBox="0 0 24 24">
+            <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+            <polyline points="2 17 12 22 22 17"></polyline>
+            <polyline points="2 12 12 17 22 12"></polyline>
+          </svg>
+        </button> -->
+            <button class="play_back" [matMenuTriggerFor]="playbackSpeedMenu">
+                <svg fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <g fill="#1c274c">
+                        <path
+                            d="m9.60751 1.51737c.77009-.17508 1.57099-.26737 2.39249-.26737 5.9371 0 10.75 4.81294 10.75 10.75 0 5.9371-4.8129 10.75-10.75 10.75-.8215 0-1.6224-.0923-2.39249-.2674-.40391-.0918-.6569-.4937-.56507-.8976s.4937-.6569.89761-.565c.66175.1504 1.35105.23 2.05995.23 5.1086 0 9.25-4.1414 9.25-9.25 0-5.10863-4.1414-9.25-9.25-9.25-.7089 0-1.3982.0796-2.05995.23004-.40391.09183-.80578-.16116-.89761-.56507s.16116-.80578.56507-.8976z" />
+                        <path
+                            d="m7.31372 3.13198c.22071.35052.11547.81359-.23504 1.03429-1.17519.73996-2.17245 1.73722-2.91241 2.91241-.22071.35051-.68377.45575-1.03429.23504-.35052-.2207-.45575-.68377-.23505-1.03428.85953-1.36508 2.01743-2.52298 3.3825-3.38251.35052-.2207.81359-.11547 1.03429.23505z" />
+                        <path
+                            d="m2.98004 9.94005c.09183-.40391-.16116-.80578-.56507-.89761s-.80578.16116-.8976.56507c-.17508.77009-.26737 1.57099-.26737 2.39249s.09229 1.6224.26737 2.3925c.09182.4039.49369.6569.8976.5651.40391-.0919.6569-.4937.56507-.8976-.15044-.6618-.23004-1.3511-.23004-2.06s.0796-1.3982.23004-2.05995z" />
+                        <path
+                            d="m3.13198 16.6863c.35052-.2207.81359-.1155 1.03429.235.73996 1.1752 1.73722 2.1725 2.91241 2.9124.35051.2207.45575.6838.23504 1.0343-.2207.3505-.68377.4558-1.03428.2351-1.36508-.8596-2.52298-2.0175-3.38251-3.3825-.2207-.3506-.11547-.8136.23505-1.0343z" />
+                        <path
+                            d="m15.4137 10.941c.7817.4616.7817 1.6564 0 2.118l-4.7202 2.7868c-.75979.4486-1.6935-.1353-1.6935-1.059v-5.57364c0-.92369.93371-1.50755 1.6935-1.05897z" />
+                    </g>
+                </svg>
+
+                <mat-menu #playbackSpeedMenu="matMenu">
+                    <button mat-menu-item *ngFor="let speed of playbackSpeeds" (click)="setPlaybackSpeed(speed)">
+                        {{ speed }}x
+                    </button>
+                </mat-menu>
+            </button>
+            <button class="captions">
+                <svg viewBox="0 0 20 20">
+                    <path
+                        d="M17 0H3a3 3 0 00-3 3v10a3 3 0 003 3h11.59l3.7 3.71A1 1 0 0019 20a.84.84 0 00.38-.08A1 1 0 0020 19V3a3 3 0 00-3-3zM3.05 9.13h2a.75.75 0 010 1.5h-2a.75.75 0 110-1.5zm3.89 4.44H3.05a.75.75 0 010-1.5h3.89a.75.75 0 110 1.5zm5 0H10a.75.75 0 010-1.5h2a.75.75 0 010 1.5zm0-2.94H8.08a.75.75 0 010-1.5H12a.75.75 0 010 1.5zm5 0H15a.75.75 0 010-1.5h2a.75.75 0 010 1.5z" />
+                </svg>
+            </button>
+            <button class="cast" (click)="togglePiPMode()">
+                <svg viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                </svg>
+            </button>
+            <button class="full-screen" (click)="toggleFullscreen()">
+                <svg class="maximize" viewBox="0 0 24 24" *ngIf="!isFullscreen">
+                    <path
+                        d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3">
+                    </path>
+                </svg>
+                <svg viewBox="0 0 24 24"  *ngIf="isFullscreen">
+                    <path d="M8 3v3a2 2 0 0 1-2 2H3m18 0h-3a2 2 0 0 1-2-2V3m0 18v-3a2 2 0 0 1 2-2h3M3 16h3a2 2 0 0 1 2 2v3"></path>
+                </svg>
+            </button>
+            <button class="close" (click)="exitPlayer()">
+                <svg width="800px" height="800px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g id="Menu / Close_MD">
+                        <path id="Vector" d="M18 18L12 12M12 12L6 6M12 12L18 6M12 12L6 18" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                    </g>
+                </svg>
+            </button>
+        </div>
+    </div>
+</div>

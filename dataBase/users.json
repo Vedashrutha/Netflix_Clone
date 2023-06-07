@@ -1,0 +1,146 @@
+[{
+  "_id": {
+    "$oid": "647b2aae709d8ccc2f12ecbf"
+  },
+  "uPass": "8e895b13eeef95c2be72554beae53cbc6f549d65ff1cf4dd157d7e7e0a877659506f32ea99",
+  "billingDetails": {
+    "_id": 202306031727367140,
+    "planName": "Premium",
+    "planPrice": 799,
+    "purchasedOn": "Sat Jun 03 2023 17:26:43 GMT+0530 (India Standard Time)",
+    "cardNumber": "656378275628"
+  },
+  "profile": [
+    {
+      "_id": 5,
+      "profileName": "Children",
+      "avatar": "../../assets/img/avatars/kids.jpg",
+      "watchlist": [],
+      "watchhistory": [],
+      "liked": [],
+      "disliked": []
+    },
+    {
+      "_id": 6,
+      "profileName": "john",
+      "avatar": "../../assets/img/avatars/avatar4.jpg",
+      "watchlist": [],
+      "watchhistory": [],
+      "liked": [],
+      "disliked": []
+    }
+  ],
+  "firstName": "Adam",
+  "lastName": "Smith",
+  "phoneNumber": {
+    "$numberLong": "9898767890"
+  },
+  "eMail": "admin@netflix.com"
+},{
+  "_id": {
+    "$oid": "647b2b99359fa38391b119f4"
+  },
+  "uPass": "4bdccf58534a4fe9e994a819ac07e7c41bdd6cb7cc9af9a240788656f6b20c335316db06249496cee43b",
+  "billingDetails": {
+    "_id": 202306031731386050,
+    "planName": "Premium",
+    "planPrice": 799,
+    "purchasedOn": "Sat Jun 03 2023 17:29:17 GMT+0530 (India Standard Time)",
+    "cardNumber": "4455626787652456"
+  },
+  "profile": [
+    {
+      "_id": 5,
+      "profileName": "Children",
+      "avatar": "../../assets/img/avatars/kids.jpg",
+      "watchlist": [],
+      "watchhistory": [],
+      "liked": [],
+      "disliked": []
+    },
+    {
+      "_id": 6,
+      "profileName": "Mr Wick",
+      "avatar": "../../assets/img/avatars/avatar2.jpg",
+      "watchlist": [],
+      "watchhistory": [],
+      "liked": [],
+      "disliked": []
+    },
+    {
+      "_id": 7,
+      "profileName": "pencil",
+      "avatar": "../../assets/img/avatars/avatar3.jpg",
+      "watchlist": [
+        1,
+        2,
+        4
+      ],
+      "watchhistory": [],
+      "liked": [],
+      "disliked": []
+    }
+  ],
+  "firstName": "John",
+  "lastName": "Wick",
+  "phoneNumber": {
+    "$numberLong": "6776554356"
+  },
+  "eMail": "john@flymail.tk"
+},{
+  "_id": {
+    "$oid": "647c36139e9dbb32d4ef2a15"
+  },
+  "uPass": "bd7e45ed96c21c4c40a82a10d8e67c0b3d6c33470e289066b547053add33c1595b68f712ae547f965d53",
+  "billingDetails": {
+    "planName": "Basic",
+    "planPrice": 199,
+    "purchasedOn": "Sun Jun 04 2023 12:26:23 GMT+0530 (India Standard Time)",
+    "cardNumber": "676336272827365",
+    "_id": 202306041228789000
+  },
+  "profile": [
+    {
+      "_id": 5,
+      "profileName": "Children",
+      "avatar": "../../assets/img/avatars/kids.jpg",
+      "watchlist": [],
+      "watchhistory": [],
+      "liked": [],
+      "disliked": []
+    },
+    {
+      "_id": 6,
+      "profileName": "1",
+      "avatar": "../../assets/img/avatars/avatar1.jpg",
+      "watchlist": [],
+      "watchhistory": [],
+      "liked": [],
+      "disliked": []
+    },
+    {
+      "_id": 7,
+      "profileName": "z-man",
+      "avatar": "../../assets/img/avatars/avatar4.jpg",
+      "watchlist": [
+        2,
+        8,
+        1,
+        3
+      ],
+      "watchhistory": [
+        1,
+        4,
+        12
+      ],
+      "liked": [],
+      "disliked": []
+    }
+  ],
+  "firstName": "1",
+  "lastName": "1",
+  "phoneNumber": {
+    "$numberLong": "8763456278"
+  },
+  "eMail": "1@zmail.com"
+}]

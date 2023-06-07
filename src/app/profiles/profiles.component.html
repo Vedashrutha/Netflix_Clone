@@ -1,0 +1,33 @@
+<section id="hero" class="d-flex align-items-center justify-content-center">
+  <div class="container" data-aos="fade-up">
+
+    <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="250">
+      <div class="col-xl-6 col-lg-8">
+        <h1>Who<span>'</span>s Watching<span>?</span></h1>
+        <!-- <h2>We are team of talented digital marketers</h2> -->
+      </div>
+    </div>
+
+    <div class="row gy-4 mt-5 justify-content-center" data-aos="zoom-in" data-aos-delay="450">
+      <div class="col-xl-2 col-md-4" *ngFor="let profile of userData.profile">
+        <a (click)="selectProfile(profile._id)">
+          <div class="icon-box">
+            <i class="ri-store-line"></i>
+            <img [src]=profile.avatar>
+            <h3>{{profile.profileName}}</h3>
+          </div>
+        </a>
+      </div>
+
+      <div class="col-xl-2 col-md-4">
+        <a [routerLink]="['/newprofile']">
+          <div class="icon-box">
+            <i class="ri-store-line"></i>
+            <img src="../../assets/img/avatars/plus.png">
+            <h3 style="color:#fff;">Add Profile</h3>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

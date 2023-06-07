@@ -1,0 +1,12 @@
+<h2 mat-dialog-title>Notifications</h2>
+<div mat-dialog-content>
+    <div *ngFor="let notification of notifications">
+        {{ notification }}
+        <hr>
+    </div>
+</div>
+<div mat-dialog-actions>
+    <!-- <button mat-raised-button color="primary" (click)="onClose()">close</button> -->
+    <button class="custom-button"  (click)="onClose()">close</button>
+
+</div>

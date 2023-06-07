@@ -1,0 +1,273 @@
+<br>
+<br>
+<!-- Continue Watching -->
+<section *ngIf="continueWatching.length>0">
+    <h2 class="row_title" data-aos="fade-up" data-aos-delay="250" data-aos-once='true'>Continue Watching</h2>
+    <div class="wrapper" data-aos="zoom-in" data-aos-delay="250" data-aos-once='true' (scroll)="onScroll('action')"
+        id="container">
+        <br>
+        <br>
+        <div class="row__inner">
+            <div class="tile" *ngFor="let continue of continueWatching">
+                <div class="tile__media">
+                    <img class="tile__img" [src]=continue.thumbnail>
+                </div>
+                <div class="tile__details">
+
+                    <i class="bi bi-play-circle icon" (click)="openPlayer(continue.id)"></i>
+                    <div class="tile__title">
+                        <a (click)="viewDetails(continue.id)">{{continue.title}}</a>
+
+                        <span class="controls">
+                            <a (click)="addToWatchList(continue.id)">
+                                <i class="material-icons"
+                                    [style.color]="isItemInArray(continue.id) ? 'red' : 'white'">add_circle</i>
+                            </a>
+                            <a (click)="addToLikes(continue.id)">
+                                <i class="material-icons">thumb_up</i>
+                            </a>
+                            <a (click)="addToDisLikes(continue.id)">
+                                <i class="material-icons">thumb_down</i>
+                            </a>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Suggested Movies-->
+<!-- <h2 class="row_title" data-aos="fade-up" data-aos-delay="250"  data-aos-once='true' >Suggested Movies for You</h2>
+<div class="wrapper" data-aos="zoom-in" data-aos-delay="250"  data-aos-once='true' (scroll)="onScroll('horror')" id="container">
+    <br>
+    <br>
+    <div class="row__inner">
+        <div class="tile" *ngFor="let h of horrorMov">
+            <div class="tile__media">
+                <img class="tile__img" [src]=h.thumbnail>
+            </div>
+            <div class="tile__details">
+                <i class="bi bi-play-circle icon" (click)="openPlayer(h.id)"></i>
+                <div class="tile__title">
+                    <a (click)="viewDetails(h.id)">{{h.title}}</a>
+                    <span class="controls">
+                        <a (click)="addToWatchList(h.id)">
+                            <i class="material-icons" [style.color]="isItemInArray(h.id) ? 'red' : 'white'">add_circle</i>
+                        </a>
+                        <a (click)="addToLikes(h.id)">
+                           <i class="material-icons">thumb_up</i>
+                        </a>
+                        <a (click)="addToDisLikes(h.id)">
+                            <i class="material-icons">thumb_down</i>
+                        </a>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>  
+</div> -->
+
+<!-- Action And Adventure movies -->
+<h2 class="row_title" data-aos="fade-up" data-aos-delay="350" data-aos-once='true'>Action</h2>
+<div class="wrapper" data-aos="zoom-in" data-aos-delay="350" data-aos-once='true' (scroll)="onScroll('action')"
+    id="container">
+    <br>
+    <br>
+    <div class="row__inner">
+        <div class="tile" *ngFor="let action of actionMov">
+            <div class="tile__media">
+                <img class="tile__img" [src]=action.thumbnail>
+            </div>
+            <div class="tile__details">
+                <i class="bi bi-play-circle icon" (click)="openPlayer(action.id)"></i>
+                <div class="tile__title">
+                    <a (click)="viewDetails(action.id)">{{action.title}}</a>
+
+                    <span class="controls">
+                        <a (click)="addToWatchList(action.id)">
+                            <i class="material-icons"
+                                [style.color]="isItemInArray(action.id) ? 'red' : 'white'">add_circle</i>
+                        </a>
+                        <a (click)="addToLikes(action.id)">
+                            <i class="material-icons">thumb_up</i>
+                        </a>
+                        <a (click)="addToDisLikes(action.id)">
+                            <i class="material-icons">thumb_down</i>
+                        </a>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<h2 class="row_title" data-aos="fade-up" data-aos-delay="350" data-aos-once='true'>Thrilling Adventure</h2>
+<div class="wrapper" data-aos="zoom-in" data-aos-delay="350" data-aos-once='true' (scroll)="onScroll('adventure')"
+    id="container">
+    <br>
+    <br>
+    <div class="row__inner">
+        <div class="tile" *ngFor="let adventure of advMov">
+            <div class="tile__media">
+                <img class="tile__img" [src]=adventure.thumbnail>
+            </div>
+            <div class="tile__details">
+                <i class="bi bi-play-circle icon" (click)="openPlayer(adventure.id)"></i>
+                <div class="tile__title">
+                    <!-- <i class="bi bi-play-circle"></i> -->
+                    <a (click)="viewDetails(adventure.id)">{{adventure.title}}</a>
+
+                    <span class="controls">
+                        <a (click)="addToWatchList(adventure.id)">
+                            <i class="material-icons"
+                                [style.color]="isItemInArray(adventure.id) ? 'red' : 'white'">add_circle</i>
+                        </a>
+                        <a (click)="addToLikes(adventure.id)">
+                            <i class="material-icons">thumb_up</i>
+                        </a>
+                        <a (click)="addToDisLikes(adventure.id)">
+                            <i class="material-icons">thumb_down</i>
+                        </a>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Horror -->
+<h2 class="row_title" data-aos="fade-up" data-aos-delay="450" data-aos-once='true'>Horror</h2>
+<div class="wrapper" data-aos="zoom-in" data-aos-delay="450" data-aos-once='true' (scroll)="onScroll('horror')"
+    id="container">
+    <br>
+    <br>
+    <div class="row__inner">
+        <div class="tile" *ngFor="let h of horrorMov">
+            <div class="tile__media">
+                <img class="tile__img" [src]=h.thumbnail>
+            </div>
+            <div class="tile__details">
+                <i class="bi bi-play-circle icon" (click)="openPlayer(h.id)"></i>
+                <div class="tile__title">
+                    <a (click)="viewDetails(h.id)">{{h.title}}</a>
+
+                    <span class="controls">
+                        <a (click)="addToWatchList(h.id)">
+                            <i class="material-icons"
+                                [style.color]="isItemInArray(h.id) ? 'red' : 'white'">add_circle</i>
+                        </a>
+                        <a (click)="addToLikes(h.id)">
+                            <i class="material-icons">thumb_up</i>
+                        </a>
+                        <a (click)="addToDisLikes(h.id)">
+                            <i class="material-icons">thumb_down</i>
+                        </a>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Crime -->
+<h2 class="row_title" data-aos="fade-up" data-aos-delay="450" data-aos-once='true'>Relentless Crime Dramas</h2>
+<div class="wrapper" data-aos="zoom-in" data-aos-delay="450" data-aos-once='true' (scroll)="onScroll('crime')"
+    id="container">
+    <br>
+    <br>
+    <div class="row__inner">
+        <div class="tile" *ngFor="let cd of crimeMov">
+            <div class="tile__media">
+                <img class="tile__img" [src]=cd.thumbnail>
+            </div>
+            <div class="tile__details">
+                <i class="bi bi-play-circle icon" (click)="openPlayer(cd.id)"></i>
+                <div class="tile__title">
+
+                    <a (click)="viewDetails(cd.id)">{{cd.title}}</a>
+
+                    <span class="controls">
+                        <a (click)="addToWatchList(cd.id)">
+                            <i class="material-icons"
+                                [style.color]="isItemInArray(cd.id) ? 'red' : 'white'">add_circle</i>
+                        </a>
+                        <a (click)="addToLikes(cd.id)">
+                            <i class="material-icons">thumb_up</i>
+                        </a>
+                        <a (click)="addToDisLikes(cd.id)">
+                            <i class="material-icons">thumb_down</i>
+                        </a>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Dramas -->
+<h2 class="row_title" data-aos="fade-up" data-aos-delay="450" data-aos-once='true'>Relentless Crime Dramas</h2>
+<div class="wrapper" data-aos="zoom-in" data-aos-delay="450" data-aos-once='true' (scroll)="onScroll('drama')"
+    id="container">
+    <br>
+    <br>
+    <div class="row__inner">
+        <div class="tile" *ngFor="let d of dramaMov">
+            <div class="tile__media">
+                <img class="tile__img" [src]=d.thumbnail>
+            </div>
+            <div class="tile__details">
+                <i class="bi bi-play-circle icon" (click)="openPlayer(d.id)"></i>
+                <div class="tile__title">
+
+                    <a (click)="viewDetails(d.id)">{{d.title}}</a>
+
+                    <span class="controls">
+                        <a (click)="addToWatchList(d.id)">
+                            <i class="material-icons"
+                                [style.color]="isItemInArray(d.id) ? 'red' : 'white'">add_circle</i>
+                        </a>
+                        <a (click)="addToLikes(d.id)">
+                            <i class="material-icons">thumb_up</i>
+                        </a>
+                        <a (click)="addToDisLikes(d.id)">
+                            <i class="material-icons">thumb_down</i>
+                        </a>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Romantic -->
+<h2 class="row_title" data-aos="fade-up" data-aos-delay="450" data-aos-once='true'>Romantic</h2>
+<div class="wrapper" data-aos="zoom-in" data-aos-delay="450" data-aos-once='true' (scroll)="onScroll('romantic')"
+    id="container">
+    <br>
+    <br>
+    <div class="row__inner">
+        <div class="tile" *ngFor="let r of romanticMov">
+            <div class="tile__media">
+                <img class="tile__img" [src]=r.thumbnail>
+            </div>
+            <div class="tile__details">
+                <i class="bi bi-play-circle icon" (click)="openPlayer(r.id)"></i>
+                <div class="tile__title">
+                    <a (click)="viewDetails(r.id)">{{r.title}}</a>
+                    <div class="controls">
+                        <a (click)="addToWatchList(r.id)">
+                            <i class="material-icons"
+                                [style.color]="isItemInArray(r.id) ? 'red' : 'white'">add_circle</i>
+                        </a>
+                        <a (click)="addToLikes(r.id)">
+                            <i class="material-icons">thumb_up</i>
+                        </a>
+                        <a (click)="addToDisLikes(r.id)">
+                            <i class="material-icons">thumb_down</i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

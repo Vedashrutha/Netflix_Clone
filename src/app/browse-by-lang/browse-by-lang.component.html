@@ -1,0 +1,180 @@
+<div class="container-fluid">
+    <app-header></app-header>
+    <div class="row" style="margin-top: 85px;">
+        <div class="col sm-4 md-6 header">
+            <h4 class="title">
+                <br>
+                Browse by Language
+            </h4>
+            <p class="subtitle">
+                Watch movies based on your Language Preferences
+            </p>
+        </div>
+    </div>
+
+    <!-- Kannada -->
+    <h2 class="row_title">ಕನ್ನಡ</h2>
+    <div class="wrapper">
+        <br>
+        <br>
+        <div class="row__inner">
+            <div class="tile" *ngFor="let kannada of kannadaMovies">
+                <div class="tile__media">
+                    <img class="tile__img" [src]=kannada.thumbnail>
+                </div>
+                <div class="tile__details">
+                    <i class="bi bi-play-circle icon" (click)="openPlayer(kannada.id)"></i>
+                    <div class="tile__title">
+                        <a (click)="viewDetails(kannada.id)">{{kannada.title}}</a>
+
+                        <span class="controls">
+                            <a (click)="addToWatchList(kannada.id)">
+                                <i class="material-icons"
+                                    [style.color]="isItemInArray(kannada.id) ? 'red' : 'white'">add_circle</i>
+                            </a>
+                            <a (click)="addToLikes(kannada.id)">
+                                <i class="material-icons">thumb_up</i>
+                            </a>
+                            <a (click)="addToDisLikes(kannada.id)">
+                                <i class="material-icons">thumb_down</i>
+                            </a>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hindi -->
+    <h2 class="row_title">हिंदी</h2>
+    <div class="wrapper">
+        <br>
+        <br>
+        <div class="row__inner">
+            <div class="tile" *ngFor="let hindi of hindiMovies">
+                <div class="tile__media">
+                    <img class="tile__img" [src]=hindi.thumbnail>
+                </div>
+                <div class="tile__details">
+                    <i class="bi bi-play-circle icon" (click)="openPlayer(hindi.id)"></i>
+                    <div class="tile__title">
+                        <a (click)="viewDetails(hindi.id)">{{hindi.title}}</a>
+
+                        <span class="controls">
+                            <a (click)="addToWatchList(hindi.id)">
+                                <i class="material-icons"
+                                    [style.color]="isItemInArray(hindi.id) ? 'red' : 'white'">add_circle</i>
+                            </a>
+                            <a (click)="addToLikes(hindi.id)">
+                                <i class="material-icons">thumb_up</i>
+                            </a>
+                            <a (click)="addToDisLikes(hindi.id)">
+                                <i class="material-icons">thumb_down</i>
+                            </a>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- English -->
+    <h2 class="row_title">English</h2>
+    <div class="wrapper">
+        <br>
+        <br>
+        <div class="row__inner">
+            <div class="tile" *ngFor="let english of englishMovies">
+                <div class="tile__media">
+                    <img class="tile__img" [src]=english.thumbnail>
+                </div>
+                <div class="tile__details">
+                    <i class="bi bi-play-circle icon" (click)="openPlayer(english.id)"></i>
+                    <div class="tile__title">
+                        <a (click)="viewDetails(english.id)">{{english.title}}</a>
+
+                        <span class="controls">
+                            <a (click)="addToWatchList(english.id)">
+                                <i class="material-icons"
+                                    [style.color]="isItemInArray(english.id) ? 'red' : 'white'">add_circle</i>
+                            </a>
+                            <a (click)="addToLikes(english.id)">
+                                <i class="material-icons">thumb_up</i>
+                            </a>
+                            <a (click)="addToDisLikes(english.id)">
+                                <i class="material-icons">thumb_down</i>
+                            </a>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tamil -->
+    <h2 class="row_title">தமிழ்</h2>
+    <div class="wrapper">
+        <br>
+        <br>
+        <div class="row__inner">
+            <div class="tile" *ngFor="let tamil of tamilMovies">
+                <div class="tile__media">
+                    <img class="tile__img" [src]=tamil.thumbnail>
+                </div>
+                <div class="tile__details">
+                    <i class="bi bi-play-circle icon" (click)="openPlayer(tamil.id)"></i>
+                    <div class="tile__title">
+                        <a (click)="viewDetails(tamil.id)">{{tamil.title}}</a>
+
+                        <span class="controls">
+                            <a (click)="addToWatchList(tamil.id)">
+                                <i class="material-icons"
+                                    [style.color]="isItemInArray(tamil.id) ? 'red' : 'white'">add_circle</i>
+                            </a>
+                            <a (click)="addToLikes(tamil.id)">
+                                <i class="material-icons">thumb_up</i>
+                            </a>
+                            <a (click)="addToDisLikes(tamil.id)">
+                                <i class="material-icons">thumb_down</i>
+                            </a>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Telugu -->
+    <h2 class="row_title">తెలుగు</h2>
+    <div class="wrapper">
+        <br>
+        <br>
+        <div class="row__inner">
+            <div class="tile" *ngFor="let telugu of teluguMovies">
+                <div class="tile__media">
+                    <img class="tile__img" [src]=telugu.thumbnail>
+                </div>
+                <div class="tile__details">
+                    <i class="bi bi-play-circle icon" (click)="openPlayer(telugu.id)"></i>
+                    <div class="tile__title">
+                        <a (click)="viewDetails(telugu.id)">{{telugu.title}}</a>
+
+                        <span class="controls">
+                            <a (click)="addToWatchList(telugu.id)">
+                                <i class="material-icons"
+                                    [style.color]="isItemInArray(telugu.id) ? 'red' : 'white'">add_circle</i>
+                            </a>
+                            <a (click)="addToLikes(telugu.id)">
+                                <i class="material-icons">thumb_up</i>
+                            </a>
+                            <a (click)="addToDisLikes(telugu.id)">
+                                <i class="material-icons">thumb_down</i>
+                            </a>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <app-footer></app-footer>
+</div>

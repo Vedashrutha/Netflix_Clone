@@ -1,0 +1,49 @@
+<div class="container-fluid m-0">
+    <app-header></app-header>
+
+    <div class="row" style="margin-top: 85px;">
+        <div class="col sm-4 md-6 header">
+            <h4 class="title">
+                <br>
+                New & Popular
+            </h4>
+        </div>
+    </div>
+
+    <div class="wrapper">
+        <div class="row">
+            <div class="col-md-3 sm-4"  *ngFor="let latest of newPopular">
+                <div class="row__inner">
+                    <div class="tile">
+                        <div class="tile__media">
+                            <img class="tile__img" [src]=latest.thumbnail>
+                        </div>
+                        <div class="tile__details">
+                            <i class="bi bi-play-circle icon" (click)="openPlayer(latest.id)"></i>
+                            <div class="tile__title">
+                                <a (click)="viewDetails(latest.id)">{{latest.title}}</a>
+        
+                                <span class="controls">
+                                    <a (click)="addToWatchList(latest.id)">
+                                        <!-- <i class="material-icons" [style.color]="isItemInArray(latest.id) ? 'red' : 'white'">add_circle</i> -->
+                                        <i class="material-icons">add_circle</i>
+                                    </a>
+                                    <a (click)="addToLikes(latest.id)">
+                                        <i class="material-icons">thumb_up</i>
+                                    </a>
+                                    <a (click)="addToDisLikes(latest.id)">
+                                        <i class="material-icons">thumb_down</i>
+                                    </a>
+                                </span>
+                            </div>
+                        </div>
+                        <h3>{{ latest.title }}</h3>
+                    </div>
+                </div>
+                
+            </div>
+           
+        </div>
+    </div>
+    <app-footer></app-footer>
+</div>

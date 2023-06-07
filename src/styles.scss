@@ -1,0 +1,44 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap-icons/font/bootstrap-icons.css";
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.custom-snackbar {
+  background: #000000;
+  color: white;
+}
+
+.custom-snackbar button {
+  transition: .3s ease-in-out;
+  background: #F44336 !important;
+  color: white !important;
+  border: none;
+}
+
+/* Custom scrollbar styles */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #000;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #999;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}
+
+@import '../node_modules/ngx-spinner/animations/timer.css';

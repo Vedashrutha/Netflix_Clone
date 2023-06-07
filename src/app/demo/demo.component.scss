@@ -1,0 +1,29 @@
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -300px; /* Start with the sidebar hidden */
+  width: 300px;
+  height: 100vh;
+  background-color: #f1f1f1;
+  transition: left 0.3s ease-in-out;
+  z-index: 9999;
+}
+
+.sidebar.open {
+  left: 0; /* Show the sidebar */
+}
+
+.button {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  width: 40px;
+  height: 40px;
+  background-color: #333;
+  color: #fff;
+  border-radius: 50%;
+  font-size: 24px;
+  text-align: center;
+  cursor: pointer;
+  z-index: 9999;
+}

@@ -1,0 +1,30 @@
+.dialog-content {
+    padding: 16px;
+  }
+  
+  .error-message {
+    //   color: red;
+    color: rgb(255, 0, 0);
+    margin-top: 5px;
+    font-size: 15px;
+  }
+  
+  label {
+    font-size: 16px;
+    font-weight: 400;
+    color: black;
+  }
+  input {
+    background-color: #ffffff;
+    margin-left: 15px;
+    display: inline-block;
+    font-size: 17px;
+    outline: none;
+    border: 1px solid rgb(194, 194, 194);
+    padding: 4px 8px 3px 12px;
+  }
+  
+  input:focus {
+    border: 1px solid #555;
+  }
+  

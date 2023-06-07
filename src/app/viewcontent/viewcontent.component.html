@@ -1,0 +1,78 @@
+<section>
+    <app-header></app-header>
+    <section id="hero" class="d-flex align-items-center" style="margin-top: 40px;">
+        <video muted autoplay loop muted id="heroVideo" #trailerVideo [src]="contentData.trailerUrl"></video>
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-6">
+                    <h1>{{contentData.title}}</h1>
+                    <p class="cast">
+                        {{contentData.year}} | {{contentData.runtime}}
+                    </p>
+                    <h2>{{contentData.description}}</h2>
+                    <p class="cast">Starring: <span *ngFor="let cast of contentData.cast">{{cast}},</span>
+                    </p>
+                    <a (click)="openPlayer(contentData.id)" class="btn-watch"> <i class="bi bi-play"></i> Watch</a>
+                    <a (click)="addToWatchList(contentData.id)" class="btn-info"><i class="bi bi-plus"></i> Watchlist</a>
+                    <br>
+                    <div class="audio_controls" (click)="toggleMute()">
+                        <i *ngIf="!isMuted" class="bi bi-volume-down"></i>
+                        <i *ngIf="isMuted" class="bi bi-volume-mute"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <div class="container-fluid m-0 " id="details">
+        <div class="row">
+            <h3>More Details</h3>
+        </div>
+        <div class="row">
+            <div class="col-md-3 col-sm-6">
+                <h4>
+                    Watch offline
+                </h4>
+                <p>Available to download</p>
+            </div>
+
+            <div class="col-md-3 col-sm-6">
+                <h4>
+                    Genres
+                </h4>
+                <p *ngFor="let g of contentData.genre">{{g}}</p>
+            </div>
+
+            <div class="col-md-3 col-sm-6">
+                <h4>
+                    Language
+                </h4>
+                <p *ngFor="let lang of contentData.language">{{lang}}</p>
+            </div>
+
+            <div class="col-md-3 col-sm-6 cast">
+                <h4>
+                    Cast
+                </h4>
+                <p *ngFor="let cast of contentData.cast">{{cast}}</p>
+            </div>
+        </div>
+        <div class="row">
+            <h3>
+                More Like This
+            </h3>
+        </div>
+        <div class="row">
+            <div class="col-md-3 col-sm-6" *ngFor="let more of moreLikeThisData">
+                <div class="item">
+                    <a (click)="viewDetails(more.id)">
+                        <img [src]=more.thumbnail>
+                        <p>{{more.title}}</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

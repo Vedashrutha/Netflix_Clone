@@ -1,0 +1,36 @@
+
+<div class="wrapper fadeInDown">
+    <div id="formContent">
+      <div class="fadeIn first">
+        <h2>Create new profile</h2>
+      </div>
+
+      <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+        <input type="email" id="profileName" formControlName="profileName"
+          [ngClass]="{ 'is-invalid': submitted && f['profileName'].errors}" class="form-control form-control-lg"
+          name="inputMail" placeholder="profile name">
+        <div *ngIf="submitted && f['profileName'].errors" class="invalid-feedback">
+          <div *ngIf="f['profileName'].errors['required']">profile name is required</div>
+        </div>
+
+        <!-- <input type="password" id="uPassword" formControlName="uPassword"
+          [ngClass]="{ 'is-invalid': submitted && f['uPassword'].errors}" class="form-control form-control-lg"
+          name="inputPass" placeholder="Enter your password">
+        <div *ngIf="submitted && f['uPassword'].errors" class="invalid-feedback">
+          <div *ngIf="f['uPassword'].errors['required']">Password is required</div>
+        </div>
+        <div *ngIf="loginForm.hasError('invalidPwd')" class="invalid-feedback"> Passwords Should Match
+        </div><br><br> -->
+        <button type="submit" class="login__btn">Create Profile</button><br /><br />
+      </form>
+      <button type="submit" class="manage__btn" [routerLink]="['/manage']">Manage Profile</button><br /><br />
+
+      <!-- <div id="formFooter">
+        <a class="foot" [routerLink]="['/loginHelp']">Need help?</a><br />
+        <span>New to Netflix?
+          <a class="boldHover" [routerLink]="['/signup']">Sign up now</a>
+        </span>
+      </div> -->
+
+    </div>
+  </div>

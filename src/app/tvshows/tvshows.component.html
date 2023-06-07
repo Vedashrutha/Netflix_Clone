@@ -1,0 +1,257 @@
+<div class="container-fluid">
+    <div class="row">
+        <app-header></app-header>
+    </div>
+    <div class="row" style="margin-top: 85px;">
+        <div class="col sm-4 md-6 header">
+            <h4 class="title">
+                <br>
+                Tv Shows
+            </h4>
+            <h5 class="subtitle">
+                Shows that you cannot miss
+            </h5>
+
+            <div class="options">
+                <span>category &nbsp;</span>
+                <select id="netflixPlan" (change)="onChangeType($event)" class="custom-select form-select">
+                    <option selected value="all">All</option>
+                    <option value="action">Action</option>
+                    <option value="adventure">Adventure</option>
+                    <option value="horror">Horror</option>
+                    <option value="crime">Crime</option>
+                    <option value="drama">Drama</option>
+                    <option value="romantic">Romantic</option>
+                </select>
+
+            </div>
+
+        </div>
+    </div>
+    <div class="row" *ngIf="show">
+        <!-- All Category Movie-->
+        <!-- Action And Adventure movies -->
+        <h2 class="row_title">Action</h2>
+        <div class="wrapper">
+            <br>
+            <br>
+            <div class="row__inner">
+                <div class="tile" *ngFor="let aA of actionSeries">
+                    <div class="tile__media">
+                        <img class="tile__img" [src]=aA.thumbnail>
+                    </div>
+                    <div class="tile__details">
+                        <i class="bi bi-play-circle icon" (click)="openPlayer(aA.id)"></i>
+                        <div class="tile__title">
+                            <a (click)="viewDetails(aA.id)">{{aA.title}}</a>
+
+                            <span class="controls">
+                                <a (click)="addToWatchList(aA.id)">
+                                     <i class="material-icons" [style.color]="isItemInArray(aA.id) ? 'red' : 'white'">add_circle</i>
+                                </a>
+                                <a (click)="addToLikes(aA.id)">
+                                    <i class="material-icons">thumb_up</i>
+                                </a>
+                                <a (click)="addToDisLikes(aA.id)">
+                                    <i class="material-icons">thumb_down</i>
+                                </a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="row_title">Adventure</h2>
+        <div class="wrapper">
+            <br>
+            <br>
+            <div class="row__inner">
+                <div class="tile" *ngFor="let adventure of advSeries">
+                    <div class="tile__media">
+                        <img class="tile__img" [src]=adventure.thumbnail>
+                    </div>
+                    <div class="tile__details">
+                        <i class="bi bi-play-circle icon" (click)="openPlayer(adventure.id)"></i>
+                        <div class="tile__title">
+                            <a (click)="viewDetails(adventure.id)">{{adventure.title}}</a>
+
+                            <span class="controls">
+                                <a (click)="addToWatchList(adventure.id)">
+                                    <i class="material-icons" [style.color]="isItemInArray(adventure.id) ? 'red' : 'white'">add_circle</i>
+                                </a>
+                                <a (click)="addToLikes(adventure.id)">
+                                    <i class="material-icons">thumb_up</i>
+                                </a>
+                                <a (click)="addToDisLikes(adventure.id)">
+                                    <i class="material-icons">thumb_down</i>
+                                </a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Horror -->
+        <h2 class="row_title">Horror</h2>
+        <div class="wrapper">
+            <br>
+            <br>
+            <div class="row__inner">
+                <div class="tile" *ngFor="let h of horrorSeries">
+                    <div class="tile__media">
+                        <img class="tile__img" [src]=h.thumbnail>
+                    </div>
+                    <div class="tile__details">
+                        <i class="bi bi-play-circle icon"></i>
+                        <div class="tile__title">
+                            <a (click)="viewDetails(h.id)">{{h.title}}</a>
+
+                            <span class="controls">
+                                <a (click)="addToWatchList(h.id)">
+                                     <i class="material-icons" [style.color]="isItemInArray(h.id) ? 'red' : 'white'">add_circle</i>
+                                </a>
+                                <a (click)="addToLikes(h.id)">
+                                    <i class="material-icons">thumb_up</i>
+                                </a>
+                                <a (click)="addToDisLikes(h.id)">
+                                    <i class="material-icons">thumb_down</i>
+                                </a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Relentless Crime Dramas -->
+        <h2 class="row_title">Ruthless Crime</h2>
+        <div class="wrapper">
+            <br>
+            <br>
+            <div class="row__inner">
+                <div class="tile" *ngFor="let c of crimeSeries">
+                    <div class="tile__media">
+                        <img class="tile__img" [src]=c.thumbnail>
+                    </div>
+                    <div class="tile__details">
+                        <i class="bi bi-play-circle icon" (click)="openPlayer(c.id)"></i>
+                        <div class="tile__title">
+                            <a (click)="viewDetails(c.id)">{{c.title}}</a>
+
+                            <span class="controls">
+                                <a (click)="addToWatchList(c.id)">
+                                     <i class="material-icons" [style.color]="isItemInArray(c.id) ? 'red' : 'white'">add_circle</i>
+                                </a>
+                                <a (click)="addToLikes(c.id)">
+                                    <i class="material-icons">thumb_up</i>
+                                </a>
+                                <a (click)="addToDisLikes(c.id)">
+                                    <i class="material-icons">thumb_down</i>
+                                </a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Never ending Dramas -->
+        <h2 class="row_title">Reckless Dramas</h2>
+        <div class="wrapper">
+            <br>
+            <br>
+            <div class="row__inner">
+                <div class="tile" *ngFor="let d of dramaSeries">
+                    <div class="tile__media">
+                        <img class="tile__img" [src]=d.thumbnail>
+                    </div>
+                    <div class="tile__details">
+                        <i class="bi bi-play-circle icon" (click)="openPlayer(d.id)"></i>
+                        <div class="tile__title">
+                            <a (click)="viewDetails(d.id)">{{d.title}}</a>
+
+                            <span class="controls">
+                                <a (click)="addToWatchList(d.id)">
+                                     <i class="material-icons" [style.color]="isItemInArray(d.id) ? 'red' : 'white'">add_circle</i>
+                                </a>
+                                <a (click)="addToLikes(d.id)">
+                                    <i class="material-icons">thumb_up</i>
+                                </a>
+                                <a (click)="addToDisLikes(d.id)">
+                                    <i class="material-icons">thumb_down</i>
+                                </a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Romantic -->
+        <h2 class="row_title">Romantic</h2>
+        <div class="wrapper">
+            <br>
+            <br>
+            <div class="row__inner">
+                <div class="tile" *ngFor="let r of romanticSeries">
+                    <div class="tile__media">
+                        <img class="tile__img" [src]=r.thumbnail>
+                    </div>
+                    <div class="tile__details">
+                        <i class="bi bi-play-circle icon" (click)="openPlayer(r.id)"></i>
+                        <div class="tile__title">
+                            <a (click)="viewDetails(r.id)">{{r.title}}</a>
+
+                            <span class="controls">
+                                <a (click)="addToWatchList(r.id)">
+                                     <i class="material-icons" [style.color]="isItemInArray(r.id) ? 'red' : 'white'">add_circle</i>
+                                </a>
+                                <a (click)="addToLikes(r.id)">
+                                    <i class="material-icons">thumb_up</i>
+                                </a>
+                                <a (click)="addToDisLikes(r.id)">
+                                    <i class="material-icons">thumb_down</i>
+                                </a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" *ngIf="!show">
+        <div class="wrapper">
+            <div class="row__inner">
+                <br>
+                <br>
+                <div class="tile" *ngFor="let m of categSeries">
+                    <div class="tile__media">
+                        <img class="tile__img" [src]=m.thumbnail>
+                    </div>
+                    <div class="tile__details">
+                        <i class="bi bi-play-circle icon" (click)="openPlayer(m.id)"></i>
+                        <div class="tile__title">
+                            <a (click)="viewDetails(m.id)">{{m.title}}</a>
+
+                            <span class="controls">
+                                <a (click)="addToWatchList(m.id)">
+                                     <i class="material-icons" [style.color]="isItemInArray(m.id) ? 'red' : 'white'">add_circle</i>
+                                </a>
+                                <a (click)="addToLikes(m.id)">
+                                    <i class="material-icons">thumb_up</i>
+                                </a>
+                                <a (click)="addToDisLikes(m.id)">
+                                    <i class="material-icons">thumb_down</i>
+                                </a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <app-footer></app-footer>
+</div>

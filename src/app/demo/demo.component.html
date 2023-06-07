@@ -1,0 +1,9 @@
+<div class="sidebar" [ngClass]="{'open': showSidebar}">
+    <div *ngFor="let notification of notifications">
+        {{ notification }}
+      </div>
+</div>
+
+<div class="button" (click)="toggleSidebar()">
+    <i class="material-icons">menu</i>
+</div>

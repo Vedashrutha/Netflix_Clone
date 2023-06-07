@@ -1,0 +1,49 @@
+<div class="container-fluid m-0" style="background-color: rgb(27, 27, 27); ">
+
+  <!-- Header Section -->
+  <div class="row">
+    <app-header></app-header>
+  </div>
+
+  <!-- Carousal Section -->
+  <div class="row">
+    <section id="hero" style="  margin-top: 85px;">
+      <div id="heroCarousel" data-bs-interval="5000" class="carousel slide carousel-fade" data-bs-ride="carousel"
+        data-bs-pause="false">
+        <div class="carousel-inner" role="listbox">
+
+          <div class="carousel-item active" *ngFor="let latest of latestMovies">
+            <img [src]="latest.image" [alt]="latest.title">
+            <div class="carousel-container">
+              <div class="container">
+                <h2 class="carousel__title">{{ latest.title }}</h2>
+                <p class="carousel__description">{{ latest.description }}</p>
+                  <a (click)="openPlayer(latest.id)" class="btn-watch"> <i class="bi bi-play"></i> Watch</a>
+                  <a (click)="viewDetails(latest.id)" class="btn-info "><i class="bi bi-info-circle"></i> info</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
+        </a>
+
+        <a class="carousel-control-next" href="#heroCarousel" role="button" data-bs-slide="next">
+          <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
+        </a>
+      </div>
+    </section>
+  </div>
+
+  <!-- Panel Section -->
+  <div class="row">
+    <app-dashboard></app-dashboard>
+  </div>
+
+  <!-- Footer Section -->
+  <div class="row">
+    <app-footer></app-footer>
+  </div>
+  <ngx-spinner  bdColor = "rgba(0, 0, 0, 0.8)" size = "medium" color = "#ff0000" type = "timer" [fullScreen] = "false"></ngx-spinner>
+</div>

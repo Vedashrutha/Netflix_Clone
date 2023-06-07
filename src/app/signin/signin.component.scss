@@ -1,0 +1,126 @@
+// /* STRUCTURE */
+
+.wrapper {
+  // background: #000;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url(../../assets/img/background.jpg);
+  // background-image: url("../../assets/images/background.jpg");
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  min-height: 100%;
+  padding: 20px;
+}
+.container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 40px;
+  background-color: #00000098;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  font-family: "Raleway", sans-serif !important;
+  text-align: center;
+  font-size: 26px;
+  font-weight: 500;
+  display: inline-block;
+  color: #ffffff;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  font-family: "Raleway", sans-serif !important;
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+input {
+  background-color: #292929;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 17px;
+  outline: none;
+  border: none;
+  border-radius: 1px;
+  color:#fff;
+}
+
+input:focus {
+
+  outline: 1px solid rgb(255, 166, 0);
+}
+
+// input[type=email],input{
+//   background-color:#292929 ;
+//   color:#fff;
+// }
+
+.form-group input,
+.form-group button {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+}
+ 
+.form-group button{
+  border-color: transparent;
+  background-color: red;
+  color: rgb(255, 255, 255);
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 18px;
+  border-radius: 5px 5px 5px 5px;
+  transition: all 0.3s ease-in-out;
+}
+
+button:focus{
+  outline: none;
+}
+
+button:disabled,
+button[disabled]{
+  cursor: not-allowed
+}
+
+.error-message {
+  //   color: red;
+  color: rgb(255, 166, 0);
+  margin-top: 5px;
+  font-size: 15px;
+}
+
+#formFooter {
+  padding: 25px;
+  text-align: center;
+  -webkit-border-radius: 0 0 10px 10px;
+  border-radius: 0 0 10px 10px;
+}
+
+#formFooter .foot,
+span{
+  font-family: "Raleway", sans-serif !important;
+  color: #8d8d8d;
+  font-size: 17px;
+}
+
+#formFooter .boldHover {
+  color: #fff;
+  font-size: 17px;
+}
+#formFooter .foot:hover,
+#formFooter .boldHover:hover {
+  text-decoration: underline;
+}

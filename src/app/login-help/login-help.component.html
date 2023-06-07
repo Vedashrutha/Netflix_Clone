@@ -1,0 +1,31 @@
+<nav class="navbar navbar-expand-lg fixed-top justify-content-between" style="background-color: #000; box-shadow: 0px 1px 7px rgba(0, 0, 0, 0.315);">
+    <a class="navbar-brand" [routerLink]="['']">
+        <img src="../../assets/img/logo.svg" style="width:180px;height:60px;" class="d-inline-block align-top" alt="">
+    </a>
+    <a class="linkButton" [routerLink]="['/signin']">
+        Sign in
+    </a>
+</nav>
+
+<body>
+    <div class="wrapper fadeInDown">
+      <div id="formContent">
+        <div class="fadeIn first">
+           <h2>Sign In</h2>
+          
+        </div>
+    
+        <form>
+          
+        </form>
+    
+        <div id="formFooter">
+          <a class="foot" [routerLink]="['/loginHelp']">Need help?</a><br/>
+          <span>New to Netflix? 
+          <a class="boldHover" [routerLink]="['/signup']">Sign up now</a>
+        </span>
+        </div>
+    
+      </div>
+    </div>
+  </body>

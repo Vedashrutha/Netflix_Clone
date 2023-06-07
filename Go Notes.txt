@@ -1,0 +1,72 @@
+capital letter for Variable => public access
+small letter for Variable => private access
+
+go mod init ModuleExample ==> to intialise a module
+
+package main
+import("fmt")
+
+variable declarations
+: declaration
+
+iota
+_ is used to say not interested 
+
+fallthrough =>break
+
+uninitialize variables are assigned to 0 at run time
+
+defer:=>executes after thr function returns
+
+closures
+
+make() function
+
+maps
+
+compositions
+
+interfaces
+->Anonymous functions
+
+
+Files
+->os.File
+->os.OpenFile->opens an existing File
+->os.Create->creates new if not exists,overwrites if file already exists
+  -->os.Read
+  -->os.Write
+
+fmt.Println
+fmt.Scanf
+
+Binary Encoding and Decoding
+-gob  GoBinary to encode & decode into Binary
+	enc := gob.NewEncoder(file)
+	dec:= gob.NewDecoder(file)
+
+
+JSON Encoder
+	enc :=json.NewEncoder(file)
+	dec:= json.NewDecoder(file)
+	the integer after encoding will be 101 and not "101"=>use mappings
+
+JSON Mapping 
+	type Book struct {
+	PageCount int    `json:"pages,string"`
+	Authors   []Name `json:"auths,omniempty"`
+}
+The JSON package uses two interfaces, Marshaler and Unmarshaler, to hook into encoding 
+and decoding events
+
+
+curl -X -POST d{}
+
+
+gorilla MUX
+
+channels
+routines
+
+async funcs
+encryption decryption files and passwords

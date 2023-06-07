@@ -1,0 +1,117 @@
+<nav class="navbar navbar-expand-lg fixed-top"
+    style="background-color: #000; box-shadow: 0px 1px 7px rgba(0, 0, 0, 0.315);">
+    <div class="container-fluid">
+        <a class="navbar-brand" [routerLink]="['/home2']">
+            <img src="../../assets/img/logo.svg" style="width:180px;height:60px;" class="img-fluid">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggler"
+            aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-list"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarToggler">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['/home2']">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['/tvshows']">TV Shows</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['/movies']">Movies</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['/latest']">New & Popular</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['/watchlist']">My List</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['/browseByLang']">Browse by Languages</a>
+                </li>
+            </ul>
+
+
+            <ul class="navbar-nav mr-auto">
+                <!-- <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="search__button icons" type="submit"><i class="bi bi-search"></i></button>
+                </form> -->
+
+                <!-- <button class="search__button icons" type="submit"><i class="bi bi-search"></i></button> -->
+                <!-- <section class="search_results">
+                        <p>Para</p>
+                        <hr>
+                    </section> -->
+                <li class="dropdown nav-item ">
+                    <!-- <form
+                        class="form-inline d-flex align-items-center  mb-md-0 me-md-auto text-dark text-decoration-none nav-iem">
+                        <div class="md-form my-0">
+                            <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search"
+                                (blur)="closeSearch()" (keyup)="suggest($event)">
+                        </div>
+                    </form>
+                    <ul>
+                        <li class="nav-item" *ngIf="searchArray.length==0 && hasQuery">
+                            <a class="nav-link">Sorry,Nothing Found</a>
+                        </li>
+                        <li class="nav-item"*ngFor="let movie of searchArray">
+                            <a class="nav-link">
+                                <img class="search_image" [src]="movie.thumbnail">
+                                {{movie.title}}
+                                <hr>
+                            </a>
+                        </li>
+                    </ul> -->
+
+                    <form class="search_form" >
+                        <mat-form-field appearance="outline" class="mat-form-field">
+                            <mat-label class="mat-label">Search</mat-label>
+                            <input type="text" (blur)="closeSearch()" (input)="suggest($event)" matInput
+                                [matAutocomplete]="auto" matInput placeholder="Placeholder">
+                            <mat-icon matSuffix>search</mat-icon>
+                            <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
+                                <mat-option *ngFor="let option of searchArray" (click)="viewDetails(option.id)">
+                                    <img src={{option.thumbnail}}> {{option.title}}
+                                </mat-option>
+                            </mat-autocomplete>
+                        </mat-form-field>
+                    </form>
+
+                </li>
+
+
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['/children']">Children</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" (click)="openNotificationDialog()"><i class="bi bi-bell icons"></i></a>
+                </li>
+                <li class="dropdown nav-item ">
+                    <a class="nav-link">
+                        <img [src]=profileDetails.avatar id="avatar">&nbsp;
+                        {{profileDetails.profileName}}
+                        <i class="bi bi-caret-down-fill"></i>
+                    </a>
+                    <ul>
+                        <li class="nav-item" *ngFor="let p of user.profile">
+                            <a class="nav-link" (click)="selectProfile(p._id)">
+                                <img [src]=p.avatar id="avatar">&nbsp;
+                                {{p.profileName}}
+                            </a>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" [routerLink]="['/manage']"><i
+                                    class="bi bi-gear-wide-connected icons"></i> &nbsp;Manage Profile</a></li>
+                        <li class="nav-item"><a class="nav-link" [routerLink]="['/account']"><i
+                                    class="bi bi-person-lock icons"></i> &nbsp;Account</a></li>
+                        <li class="nav-item" style="text-align: center;">
+                            <hr style="background-color: #fff;">
+                            <a (click)="signOut()">Sign out &nbsp;<i class="bi bi-box-arrow-right icons"></i> </a>
+                        </li>
+                    </ul>
+                </li>
+
+            </ul>
+
+        </div>
+    </div>
+</nav>
